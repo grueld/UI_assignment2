@@ -46,12 +46,20 @@ public 	class Window extends JFrame implements ActionListener, ComponentListener
 		contentPane = new JPanel();
 		contentPane.setLayout(new LayoutMan()) ;
 		
-		
 		button1 = new JButton("Ass") ;
 		button1.addActionListener(this) ;
 		
 		label1 = new JLabel("LABEL1");
 		button2 = new JButton("BUTTON2");
+		text = new JTextField("TEXTFIELD");
+		button3 = new JButton("BUTTON3");
+		String[] listContents = {"Item1", "Item2"};
+		list = new JList(listContents);
+		button3 = new JButton("BUTTON4");
+		button3 = new JButton("BUTTON5");
+		button3 = new JButton("BUTTON6");
+		button3 = new JButton("BUTTON7");
+		label2 = new JLabel("LABEL2");
 		
 		contentPane.add(label1);
 		contentPane.add(button1);
