@@ -5,7 +5,7 @@ public class Test {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		new Window() ;
+		Window w = new Window();
 	}
 
 }
