@@ -55,10 +55,10 @@ public 	class Window extends JFrame implements ActionListener, ComponentListener
 		button3 = new JButton("BUTTON3");
 		String[] listContents = {"Item1", "Item2"};
 		list = new JList(listContents);
-		button3 = new JButton("BUTTON4");
-		button3 = new JButton("BUTTON5");
-		button3 = new JButton("BUTTON6");
-		button3 = new JButton("BUTTON7");
+		button4 = new JButton("BUTTON4");
+		button5 = new JButton("BUTTON5");
+		button6 = new JButton("BUTTON6");
+		button7 = new JButton("BUTTON7");
 		label2 = new JLabel("LABEL2");
 		
 		contentPane.add(label1);
