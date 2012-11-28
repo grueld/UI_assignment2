@@ -29,8 +29,8 @@ public 	class Window extends JFrame implements ActionListener {
 		button = new JButton("Ass") ;
 		button.addActionListener(this) ;
 		contentPane = new JPanel();
-		contentPane.setLayout(new BorderLayout()) ;
-		contentPane.add(button, BorderLayout.CENTER) ;
+		contentPane.add(button);
+		contentPane.setLayout(new LayoutMan()) ;
 		setContentPane(contentPane) ;
 		//initComponents();
 	}

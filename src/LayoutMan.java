@@ -15,6 +15,9 @@ public class LayoutMan implements LayoutManager{
 	@Override
 	public void layoutContainer(Container parent) {
 		// TODO Auto-generated method stub
+		System.out.println(parent.getComponentCount());
+		Component c = parent.getComponent(0);
+		c.setBounds(25, 25, 25, 25);
 		
 	}
 
@@ -35,5 +38,5 @@ public class LayoutMan implements LayoutManager{
 		// TODO Auto-generated method stub
 		
 	}
-
+	
 }
