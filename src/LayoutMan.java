@@ -17,8 +17,8 @@ public class LayoutMan implements LayoutManager{
 		// TODO Auto-generated method stub
 		System.out.println(parent.getComponentCount());
 		Component c = parent.getComponent(0);
-		c.setBounds(25, 25, 25, 25);
-		
+		Dimension d = c.getPreferredSize();
+		c.setBounds(25, 25, d.width, d.height);
 	}
 
 	@Override
