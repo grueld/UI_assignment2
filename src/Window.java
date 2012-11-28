@@ -8,8 +8,11 @@ import java.awt.event.ComponentListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 
 
 public 	class Window extends JFrame implements ActionListener, ComponentListener {
@@ -17,7 +20,18 @@ public 	class Window extends JFrame implements ActionListener, ComponentListener
 	private final double RATIO = 16 / (double) 9;
 
 	private JPanel contentPane;
-	private JButton button ;
+	private JLabel label1;
+	private JButton button1;
+	private JButton button2;
+	private JTextField text;
+	private JButton button3;
+	private JList list;
+	private JButton button4;
+	private JButton button5;
+	private JButton button6;
+	private JButton button7;
+	private JLabel label2;
+	
 	private JOptionPane jop = new JOptionPane() ;
 
 	public Window() {
@@ -29,20 +43,38 @@ public 	class Window extends JFrame implements ActionListener, ComponentListener
 		setResizable(true) ;
 		setVisible(true) ;
 
-		button = new JButton("Ass") ;
-		button.addActionListener(this) ;
 		contentPane = new JPanel();
-		contentPane.add(button);
 		contentPane.setLayout(new LayoutMan()) ;
+		
+		
+		button1 = new JButton("Ass") ;
+		button1.addActionListener(this) ;
+		
+		label1 = new JLabel("LABEL1");
+		button2 = new JButton("BUTTON2");
+		
+		contentPane.add(label1);
+		contentPane.add(button1);
+		contentPane.add(button2);
+		contentPane.add(text);
+		contentPane.add(button3);
+		contentPane.add(list);
+		contentPane.add(button4);
+		contentPane.add(button5);
+		contentPane.add(button6);
+		contentPane.add(button7);
+		contentPane.add(label2);
+		
+		setContentPane(contentPane);
 		addComponentListener(this);
-		setContentPane(contentPane) ;
+		
 		//initComponents();
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
 
-		if (arg0.getSource() == button) {
+		if (arg0.getSource() == button1) {
 			jop.showMessageDialog(getComponent(0), "HOLE");
 		}
 		
@@ -60,7 +92,8 @@ public 	class Window extends JFrame implements ActionListener, ComponentListener
 	    	compDim.height = (int) (x / RATIO);  
 	    }  
 	    e.getComponent().setSize(compDim);
-	  //  System.out.println(compDim);
+	    e.getComponent().repaint();
+	    System.out.println(compDim);
 	}
 
 	@Override
