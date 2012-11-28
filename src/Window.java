@@ -1,4 +1,5 @@
 import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -29,10 +30,14 @@ public 	class Window extends JFrame implements ActionListener {
 		button = new JButton("Ass") ;
 		button.addActionListener(this) ;
 		contentPane = new JPanel();
-		contentPane.setLayout(new BorderLayout()) ;
+		contentPane.setLayout(new BorderLayout()) ;  // changer pour mettre le notre
 		contentPane.add(button, BorderLayout.CENTER) ;
 		setContentPane(contentPane) ;
 		//initComponents();
+		System.out.println("aa: " + getX()) ;
+		int X = getX() ;
+		setSize(new Dimension(2*X, 3*X)) ;
+		System.out.println("aa: " + getX()) ;
 	}
 
 	@Override
