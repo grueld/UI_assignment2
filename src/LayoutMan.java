@@ -16,21 +16,30 @@ public class LayoutMan implements LayoutManager{
 	public void layoutContainer(Container parent) {
 		// TODO Auto-generated method stub
 		//System.out.println(parent.getComponentCount());
-		Component c = parent.getComponent(0);
-		Dimension d = c.getPreferredSize();
-		c.setBounds(25, 25, d.width, d.height);
+		Component[] components = parent.getComponents();
+		Dimension d;
+		int height = 1;
+		int width = 1;
+		for(Component c: components)
+		{
+			d = c.getPreferredSize();
+			height += 25;
+			width += 25;
+			c.setBounds(height, width, d.width, d.height);
+			System.out.println(height);
+		}
 	}
 
 	@Override
 	public Dimension minimumLayoutSize(Container parent) {
 		// TODO Auto-generated method stub
-		return null;
+		return new Dimension(300,300);
 	}
 
 	@Override
 	public Dimension preferredLayoutSize(Container parent) {
 		// TODO Auto-generated method stub
-		return null;
+		return new Dimension(300, 300);
 	}
 
 	@Override

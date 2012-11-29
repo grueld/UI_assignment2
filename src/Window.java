@@ -1,4 +1,5 @@
 import java.awt.BorderLayout;
+import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -7,6 +8,7 @@ import java.awt.event.ComponentEvent;
 import java.awt.event.ComponentListener;
 
 import javax.swing.JButton;
+import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JList;
@@ -72,11 +74,10 @@ public 	class Window extends JFrame implements ActionListener, ComponentListener
 		contentPane.add(button6);
 		contentPane.add(button7);
 		contentPane.add(label2);
-		
+		contentPane.addComponentListener(this);
 		setContentPane(contentPane);
-		addComponentListener(this);
 		
-		//initComponents();
+		
 	}
 
 	@Override
@@ -89,7 +90,9 @@ public 	class Window extends JFrame implements ActionListener, ComponentListener
 	}
 	
 	public void componentResized(ComponentEvent e) {
-		Dimension compDim = e.getComponent().getSize();
+		Container window = e.getComponent().getParent().getParent().getParent();
+		System.out.println(window.getClass());
+		Dimension compDim = window.getSize();
 		double x = compDim.width;  
 	    double y = compDim.height;  
 	    if (x / y < RATIO) {  
@@ -99,8 +102,7 @@ public 	class Window extends JFrame implements ActionListener, ComponentListener
 	    	compDim.width = (int) x;  
 	    	compDim.height = (int) (x / RATIO);  
 	    }  
-	    e.getComponent().setSize(compDim);
-	    e.getComponent().repaint();
+	    window.setSize(compDim);
 	    System.out.println(compDim);
 	}
 
