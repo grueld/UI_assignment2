@@ -76,7 +76,7 @@ public 	class Window extends JFrame implements ActionListener, ComponentListener
 		contentPane.add(label2);
 		contentPane.addComponentListener(this);
 		setContentPane(contentPane);
-		
+		pack();
 		
 	}
 
@@ -91,7 +91,7 @@ public 	class Window extends JFrame implements ActionListener, ComponentListener
 	
 	public void componentResized(ComponentEvent e) {
 		Container window = e.getComponent().getParent().getParent().getParent();
-		System.out.println(window.getClass());
+		//System.out.println(window.getClass());
 		Dimension compDim = window.getSize();
 		double x = compDim.width;  
 	    double y = compDim.height;  
