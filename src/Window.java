@@ -1,6 +1,7 @@
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.GridLayout;
+import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ComponentEvent;
@@ -20,17 +21,20 @@ public 	class Window extends JFrame implements ActionListener, ComponentListener
 	private final double RATIO = 16 / (double) 9;
 
 	private JPanel contentPane;
+
+	private JList list;
+
+	private JTextField text;
 	private JLabel label1;
+	private JLabel label2;
+	
 	private JButton button1;
 	private JButton button2;
-	private JTextField text;
 	private JButton button3;
-	private JList list;
 	private JButton button4;
 	private JButton button5;
 	private JButton button6;
 	private JButton button7;
-	private JLabel label2;
 	
 	private JOptionPane jop = new JOptionPane() ;
 
@@ -74,8 +78,6 @@ public 	class Window extends JFrame implements ActionListener, ComponentListener
 		contentPane.add(label2);
 		
 		setContentPane(contentPane);
-		addComponentListener(this);
-		
 		//initComponents();
 	}
 
@@ -88,22 +90,6 @@ public 	class Window extends JFrame implements ActionListener, ComponentListener
 		
 	}
 	
-	public void componentResized(ComponentEvent e) {
-		Dimension compDim = e.getComponent().getSize();
-		double x = compDim.width;  
-	    double y = compDim.height;  
-	    if (x / y < RATIO) {  
-	      compDim.width = (int) (y * RATIO);  
-	      compDim.height = (int) y;  
-	    } else {  
-	    	compDim.width = (int) x;  
-	    	compDim.height = (int) (x / RATIO);  
-	    }  
-	    e.getComponent().setSize(compDim);
-	    e.getComponent().repaint();
-	    System.out.println(compDim);
-	}
-
 	@Override
 	public void componentHidden(ComponentEvent arg0) {
 		// TODO Auto-generated method stub
@@ -118,6 +104,12 @@ public 	class Window extends JFrame implements ActionListener, ComponentListener
 
 	@Override
 	public void componentShown(ComponentEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void componentResized(ComponentEvent arg0) {
 		// TODO Auto-generated method stub
 		
 	}
