@@ -33,7 +33,7 @@ public class LayoutMan implements LayoutManager{
 	@Override
 	public Dimension minimumLayoutSize(Container parent) {
 		// TODO Auto-generated method stub
-		return new Dimension(300,300);
+		return new Dimension(300, 300);
 	}
 
 	@Override

@@ -39,8 +39,8 @@ public 	class Window extends JFrame implements ActionListener, ComponentListener
 	public Window() {
 		// window settings
 		setTitle("allo") ;
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
-		setSize(200, 200) ;              	         
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setSize(200, 200) ;
 		setLocation (200,200) ;
 		setResizable(true) ;
 		setVisible(true) ;
