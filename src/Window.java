@@ -1,4 +1,5 @@
 import java.awt.BorderLayout;
+import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.Rectangle;
@@ -8,6 +9,7 @@ import java.awt.event.ComponentEvent;
 import java.awt.event.ComponentListener;
 
 import javax.swing.JButton;
+import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JList;
@@ -42,8 +44,7 @@ public 	class Window extends JFrame implements ActionListener, ComponentListener
 		// window settings
 		setTitle("allo") ;
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
-		setSize(200, 200) ;              	         
-		setLocation (200,200) ;
+		setLocation (100,100) ;
 		setResizable(true) ;
 		setVisible(true) ;
 
@@ -76,9 +77,10 @@ public 	class Window extends JFrame implements ActionListener, ComponentListener
 		contentPane.add(button6);
 		contentPane.add(button7);
 		contentPane.add(label2);
-		
+		contentPane.addComponentListener(this);
 		setContentPane(contentPane);
-		//initComponents();
+		
+		pack() ;
 	}
 
 	@Override
@@ -90,6 +92,23 @@ public 	class Window extends JFrame implements ActionListener, ComponentListener
 		
 	}
 	
+	public void componentResized(ComponentEvent e) {
+		Container window = e.getComponent().getParent().getParent().getParent();
+		System.out.println(window.getClass());
+		Dimension compDim = window.getSize();
+		double x = compDim.width;  
+	    double y = compDim.height;  
+	    if (x / y < RATIO) {  
+	      compDim.width = (int) (y * RATIO);  
+	      compDim.height = (int) y;  
+	    } else {  
+	    	compDim.width = (int) x;  
+	    	compDim.height = (int) (x / RATIO);  
+	    }  
+	    window.setSize(compDim);
+	    System.out.println(compDim);
+	}
+
 	@Override
 	public void componentHidden(ComponentEvent arg0) {
 		// TODO Auto-generated method stub
@@ -104,12 +123,6 @@ public 	class Window extends JFrame implements ActionListener, ComponentListener
 
 	@Override
 	public void componentShown(ComponentEvent arg0) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void componentResized(ComponentEvent arg0) {
 		// TODO Auto-generated method stub
 		
 	}
