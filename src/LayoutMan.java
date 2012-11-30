@@ -2,15 +2,10 @@ import java.awt.Component;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.LayoutManager;
+import java.awt.LayoutManager2;
 
 
 public class LayoutMan implements LayoutManager{
-
-	@Override
-	public void addLayoutComponent(String name, Component comp) {
-		// TODO Auto-generated method stub
-		
-	}
 
 	@Override
 	public void layoutContainer(Container parent) {
@@ -26,20 +21,19 @@ public class LayoutMan implements LayoutManager{
 			height += 25;
 			width += 25;
 			c.setBounds(height, width, d.width, d.height);
-			System.out.println(height);
 		}
 	}
 
 	@Override
 	public Dimension minimumLayoutSize(Container parent) {
 		// TODO Auto-generated method stub
-		return new Dimension(300, 300);
+		return new Dimension(270,480);
 	}
 
 	@Override
 	public Dimension preferredLayoutSize(Container parent) {
 		// TODO Auto-generated method stub
-		return new Dimension(300, 300);
+		return new Dimension(270, 480);
 	}
 
 	@Override
@@ -48,4 +42,10 @@ public class LayoutMan implements LayoutManager{
 		
 	}
 	
+	@Override
+	public void addLayoutComponent(String name, Component comp) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

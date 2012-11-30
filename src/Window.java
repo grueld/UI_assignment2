@@ -1,14 +1,11 @@
-import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.Dimension;
-import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ComponentEvent;
 import java.awt.event.ComponentListener;
 
 import javax.swing.JButton;
-import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JList;
@@ -22,26 +19,28 @@ public 	class Window extends JFrame implements ActionListener, ComponentListener
 	private final double RATIO = 16 / (double) 9;
 
 	private JPanel contentPane;
+
+	private JList list;
+
+	private JTextField text;
 	private JLabel label1;
+	private JLabel label2;
+	
 	private JButton button1;
 	private JButton button2;
-	private JTextField text;
 	private JButton button3;
-	private JList list;
 	private JButton button4;
 	private JButton button5;
 	private JButton button6;
 	private JButton button7;
-	private JLabel label2;
 	
 	private JOptionPane jop = new JOptionPane() ;
 
 	public Window() {
 		// window settings
 		setTitle("allo") ;
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setSize(200, 200) ;
-		setLocation (200,200) ;
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
+		setLocation (100,100) ;
 		setResizable(true) ;
 		setVisible(true) ;
 
@@ -77,7 +76,6 @@ public 	class Window extends JFrame implements ActionListener, ComponentListener
 		contentPane.addComponentListener(this);
 		setContentPane(contentPane);
 		pack();
-		
 	}
 
 	@Override
