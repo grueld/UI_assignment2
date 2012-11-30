@@ -13,8 +13,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-
-public 	class Window extends JFrame implements ActionListener, ComponentListener {
+public class Window extends JFrame implements ActionListener, ComponentListener {
 	private static final long serialVersionUID = 1L;
 	private final double RATIO = 16 / (double) 9;
 
@@ -25,7 +24,7 @@ public 	class Window extends JFrame implements ActionListener, ComponentListener
 	private JTextField text;
 	private JLabel label1;
 	private JLabel label2;
-	
+
 	private JButton button1;
 	private JButton button2;
 	private JButton button3;
@@ -34,10 +33,9 @@ public 	class Window extends JFrame implements ActionListener, ComponentListener
 	private JButton button6;
 	private JButton button7;
 	
-	private JOptionPane jop = new JOptionPane() ;
-	
-	private int previousX;
-	private int previousY;
+	private JOptionPane jop = new JOptionPane();
+	//private int previousX;
+	//private int previousY;
 
 	public Window() {
 		// window settings
@@ -49,28 +47,27 @@ public 	class Window extends JFrame implements ActionListener, ComponentListener
 		setVisible(true) ;
 		
 		//save the width and height of the window to use it in its listener
-		this.previousX = getWidth();
-		this.previousY = getHeight();
-		System.out.println("The current height is" + this.previousX);
+		//this.previousX = getWidth();
+		//this.previousY = getHeight();
 
 		contentPane = new JPanel();
-		contentPane.setLayout(new LayoutMan()) ;
-		
-		button1 = new JButton("Ass") ;
-		button1.addActionListener(this) ;
-		
+		contentPane.setLayout(new LayoutMan());
+
+		button1 = new JButton("Ass");
+		button1.addActionListener(this);
+
 		label1 = new JLabel("LABEL1");
 		button2 = new JButton("BUTTON2");
 		text = new JTextField("TEXTFIELD");
 		button3 = new JButton("BUTTON3");
-		String[] listContents = {"Item1", "Item2"};
+		String[] listContents = { "Item1", "Item2" };
 		list = new JList(listContents);
 		button4 = new JButton("BUTTON4");
 		button5 = new JButton("BUTTON5");
 		button6 = new JButton("BUTTON6");
 		button7 = new JButton("BUTTON7");
 		label2 = new JLabel("LABEL2");
-		
+
 		contentPane.add(label1);
 		contentPane.add(button1);
 		contentPane.add(button2);
@@ -82,7 +79,7 @@ public 	class Window extends JFrame implements ActionListener, ComponentListener
 		contentPane.add(button6);
 		contentPane.add(button7);
 		contentPane.add(label2);
-		contentPane.addComponentListener(this);
+//		contentPane.addComponentListener(this);
 		setContentPane(contentPane);
 		pack();
 	}
@@ -93,9 +90,9 @@ public 	class Window extends JFrame implements ActionListener, ComponentListener
 		if (arg0.getSource() == button1) {
 			jop.showMessageDialog(getComponent(0), "HOLE");
 		}
-		
+
 	}
-	
+
 	public void componentResized(ComponentEvent e) {
 		//Get the size of the window
 		Container window = e.getComponent().getParent().getParent().getParent();
@@ -146,7 +143,7 @@ public 	class Window extends JFrame implements ActionListener, ComponentListener
 	    
 	    window.setSize(compDim);
 	    System.out.println(compDim);
-	    System.out.println("The new ratio is" + compDim.getWidth() / compDim.getHeight());
+	    //System.out.println("The new ratio is" + compDim.getWidth() / compDim.getHeight());
 	    
 	    //save the current width and height for the next call of this method
 //	    this.previousX = x;
@@ -156,18 +153,18 @@ public 	class Window extends JFrame implements ActionListener, ComponentListener
 	@Override
 	public void componentHidden(ComponentEvent arg0) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void componentMoved(ComponentEvent arg0) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void componentShown(ComponentEvent arg0) {
 		// TODO Auto-generated method stub
-		
+
 	}
 }
