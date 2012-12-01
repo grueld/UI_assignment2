@@ -100,8 +100,8 @@ public class Window extends JFrame implements ActionListener, ComponentListener 
 		Container window = e.getComponent().getParent().getParent().getParent();
 //		//System.out.println(window.getClass());
 		Dimension compDim = window.getSize();
-		int x = compDim.width;  
-	    int y = compDim.height;
+		double x = compDim.width;  
+	    double y = compDim.height;
 //	
 //	    //set new width and height to keep the same ratio
 //	    if (x / y < RATIO) {  
@@ -112,8 +112,8 @@ public class Window extends JFrame implements ActionListener, ComponentListener 
 //	    	compDim.height = (int) (x / RATIO);  
 //	    }  
 //////////////////////////	    
-	    int x_change = x - this.previousX;
-	    int y_change = y - this.previousY;
+	    double x_change = x / this.previousX;
+	    double y_change = y / this.previousY;
 	    
 	    System.out.println("The X has changed by: " + x_change);
 	    System.out.println("The Y has changed by: " + y_change);
@@ -121,22 +121,20 @@ public class Window extends JFrame implements ActionListener, ComponentListener 
 	    if (x_change == 0 && y_change != 0)
 	    {
 	    	System.out.println("Y has changed");
-	    	compDim.width = (int) (y*RATIO);
+	    	//compDim.width = (int) (y*RATIO);
 	    	//compDim.height = (int) y;
-	    	
-	    	//compDim.setSize(x * y_change, y);
+	    	compDim.setSize(x * y_change, y);
 	    }else if (x_change != 0 && y_change == 0)
 	    {
 	    	System.out.println("X has changed");
 	    	//compDim.width = (int) x;
-	    	compDim.height = (int) (x/RATIO);
-	
-	    	//compDim.setSize(x , y * x_change);
+	    	//compDim.height = (int) (x/RATIO);
+	    	compDim.setSize(x , y * x_change);
 	    }else if (x_change != 0 && y_change != 0)
 	    {
 	    	System.out.println("Both X and Y have changed");
-	    	compDim.height = (int) (x/RATIO);
-	    	//compDim.setSize(x * y_change, y * x_change);
+	    	//compDim.height = (int) (x/RATIO);
+	    	compDim.setSize(x * y_change, y * x_change);
 	    }else // (x_change == 1 && y_change == 1)
 	    {
 	    	System.out.println("No change at all");
@@ -147,8 +145,8 @@ public class Window extends JFrame implements ActionListener, ComponentListener 
 	    //System.out.println("The new ratio is" + compDim.getWidth() / compDim.getHeight());
 	    
 	    //save the current width and height for the next call of this method
-	    this.previousX = x;
-	    this.previousY = y;
+	    this.previousX = (int) compDim.getWidth();
+	    this.previousY = (int) compDim.getHeight();
 	}
 
 	@Override
