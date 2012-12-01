@@ -15,23 +15,17 @@ import javax.swing.JTextField;
 
 public class Window extends JFrame implements ActionListener, ComponentListener {
 	private static final long serialVersionUID = 1L;
-	private final double RATIO = 16 / (double) 9;
 
 	private JPanel contentPane;
 
-	private JList list;
+	private float RATIO = 16 / (float) 9;
 
-	private JTextField text;
-	private JLabel label1;
-	private JLabel label2;
+	private JLabel label1, label2 ;
+	private JTextField text ;
+	private JList list ;
 
-	private JButton button1;
-	private JButton button2;
-	private JButton button3;
-	private JButton button4;
-	private JButton button5;
-	private JButton button6;
-	private JButton button7;
+	private JButton button1, button2, button3, button4 ;
+	private JButton button5, button6, button7 ;
 
 	private JOptionPane jop = new JOptionPane();
 
@@ -41,7 +35,7 @@ public class Window extends JFrame implements ActionListener, ComponentListener 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setLocation(100, 100);
 		setResizable(true);
-		setSize(270, 480);
+		setSize(480, 270);
 		setVisible(true);
 
 		contentPane = new JPanel();
@@ -51,7 +45,8 @@ public class Window extends JFrame implements ActionListener, ComponentListener 
 		button1.addActionListener(this);
 
 		label1 = new JLabel("LABEL1");
-		button2 = new JButton("BUTTON2");
+		button2 = new JButton("Rotation");
+		button2.addActionListener(this) ;
 		text = new JTextField("TEXTFIELD");
 		button3 = new JButton("BUTTON3");
 		String[] listContents = { "Item1", "Item2" };
@@ -73,7 +68,7 @@ public class Window extends JFrame implements ActionListener, ComponentListener 
 		contentPane.add(button6);
 		contentPane.add(button7);
 		contentPane.add(label2);
-//		contentPane.addComponentListener(this);
+		contentPane.addComponentListener(this);
 		setContentPane(contentPane);
 		pack();
 	}
@@ -84,41 +79,37 @@ public class Window extends JFrame implements ActionListener, ComponentListener 
 		if (arg0.getSource() == button1) {
 			jop.showMessageDialog(getComponent(0), "HOLE");
 		}
+		if (arg0.getSource() == button2) {
+			RATIO = 1/RATIO;
+			setSize(getHeight(), getWidth()) ;
+			System.out.println("on passe dans l'action du bouton rotation " + RATIO) ;
+		}
 
 	}
 
 	public void componentResized(ComponentEvent e) {
-//		Container window = e.getComponent().getParent().getParent().getParent();
-//		// System.out.println(window.getClass());
-//		Dimension compDim = window.getSize();
-//		double x = compDim.width;
-//		double y = compDim.height;
-//		if (x / y < RATIO) {
-//			compDim.width = (int) (y * RATIO);
-//			compDim.height = (int) y;
-//		} else {
-//			compDim.width = (int) x;
-//			compDim.height = (int) (x / RATIO);
-//		}
-//		window.setSize(compDim);
-//		System.out.println(compDim);
+		Container window = e.getComponent().getParent().getParent().getParent();
+		Dimension compDim = window.getSize();
+		double x = compDim.width;
+		double y = compDim.height;
+		if (x / y < RATIO) {
+			compDim.width = (int) (y * RATIO);
+			compDim.height = (int) y;
+		} else {
+			compDim.width = (int) x;
+			compDim.height = (int) (x / RATIO);
+		}
+		window.setSize(compDim);
+		System.out.println(compDim);
+		System.out.println("on passe dans componentresized " + RATIO) ;
 	}
 
 	@Override
-	public void componentHidden(ComponentEvent arg0) {
-		// TODO Auto-generated method stub
-
-	}
+	public void componentHidden(ComponentEvent arg0) {}
 
 	@Override
-	public void componentMoved(ComponentEvent arg0) {
-		// TODO Auto-generated method stub
-
-	}
+	public void componentMoved(ComponentEvent arg0) {}
 
 	@Override
-	public void componentShown(ComponentEvent arg0) {
-		// TODO Auto-generated method stub
-
-	}
+	public void componentShown(ComponentEvent arg0) {}
 }
