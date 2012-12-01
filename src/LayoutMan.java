@@ -24,8 +24,8 @@ public class LayoutMan implements LayoutManager{
 			c[1].setBounds(wX - (margin + 30 + 2*wX/8), margin, wX/8, wY/11) ;         // button1
 			c[2].setBounds(wX - (margin + wX/8), margin, wX/8, wY/11) ;              // button2
 
-			c[3].setBounds(margin, c[0].getY() + c[0].getHeight() + 5, wX - 2*margin - 25, wY/11) ;   // text
-			c[4].setBounds(wX - (margin + 20), c[3].getY(), 20, c[3].getHeight()) ;     // button3
+			c[3].setBounds(margin, c[0].getY() + c[0].getHeight() + 5, wX - 2*margin - 35, wY/11) ;   // text
+			c[4].setBounds(wX - (margin + 20), c[3].getY(), 30, c[3].getHeight()) ;     // button3
 
 			c[5].setBounds(margin + (int)(wX/3.69), c[3].getY() + c[3].getHeight() + 20 , (int)(wX/2.4), (int)(wY/3.86)) ;   // list
 

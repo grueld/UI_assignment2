@@ -1,5 +1,6 @@
 import java.awt.Container;
 import java.awt.Dimension;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ComponentEvent;
@@ -56,7 +57,7 @@ public class Window extends JFrame implements ActionListener, ComponentListener 
 		label1 = new JLabel("LABEL1");
 		button2 = new JButton("Rotation");
 		button2.addActionListener(this) ;
-		text = new JTextField("TEXTFIELD");
+		text = new JTextField("Search a contact...");
 		button3 = new JButton("BUTTON3");
 		String[] listContents = { "Item1", "Item2" };
 		list = new JList(listContents);
@@ -66,8 +67,9 @@ public class Window extends JFrame implements ActionListener, ComponentListener 
 		button7 = new JButton("BUTTON7");
 		label2 = new JLabel("LABEL2");
 		
-		Icon icon = new ImageIcon("icon/search.png");
-		button3.setIcon(icon);
+		ImageIcon icon = new ImageIcon("icon/search.png");
+		Image ni = icon.getImage().getScaledInstance(15,15,java.awt.Image.SCALE_SMOOTH);
+		button3.setIcon(new ImageIcon(ni));
 		
 		contentPane.add(label1);
 		contentPane.add(button1);
