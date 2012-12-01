@@ -146,10 +146,6 @@ public class Window extends JFrame implements ActionListener, ComponentListener 
 		button6 = new JButton("BUTTON6");
 		button7 = new JButton("BUTTON7");
 		label2 = new JLabel("LABEL2");
-		
-		ImageIcon icon = new ImageIcon("icon/search.png");
-		Image ni = icon.getImage().getScaledInstance(15,15,java.awt.Image.SCALE_SMOOTH);
-		button3.setIcon(new ImageIcon(ni));
 
 		contentPane.add(label1);
 		contentPane.add(button1);
