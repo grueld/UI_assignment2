@@ -31,8 +31,8 @@ public class Window extends JFrame implements ActionListener, ComponentListener 
 	private JButton button5, button6, button7 ;
 
 	private JOptionPane jop = new JOptionPane();
-	//private int previousX;
-	//private int previousY;
+	private int previousX;
+	private int previousY;
 
 	public Window() {
 		// window settings
@@ -44,8 +44,8 @@ public class Window extends JFrame implements ActionListener, ComponentListener 
 		setVisible(true) ;
 		
 		//save the width and height of the window to use it in its listener
-		//this.previousX = getWidth();
-		//this.previousY = getHeight();
+		this.previousX = getWidth();
+		this.previousY = getHeight();
 
 		contentPane = new JPanel();
 		contentPane.setLayout(new LayoutMan());
@@ -80,7 +80,7 @@ public class Window extends JFrame implements ActionListener, ComponentListener 
 		contentPane.add(button6);
 		contentPane.add(button7);
 		contentPane.add(label2);
-//		contentPane.addComponentListener(this);
+		contentPane.addComponentListener(this);
 		setContentPane(contentPane);
 		pack();
 	}
@@ -103,11 +103,11 @@ public class Window extends JFrame implements ActionListener, ComponentListener 
 ////////////////////
 //		System.out.println("on passe dans componentresized " + RATIO) ;
 //		//Get the size of the window
-//		Container window = e.getComponent().getParent().getParent().getParent();
+		Container window = e.getComponent().getParent().getParent().getParent();
 //		//System.out.println(window.getClass());
-//		Dimension compDim = window.getSize();
-//		int x = compDim.width;  
-//	    int y = compDim.height;
+		Dimension compDim = window.getSize();
+		int x = compDim.width;  
+	    int y = compDim.height;
 //	
 //	    //set new width and height to keep the same ratio
 //	    if (x / y < RATIO) {  
@@ -118,44 +118,43 @@ public class Window extends JFrame implements ActionListener, ComponentListener 
 //	    	compDim.height = (int) (x / RATIO);  
 //	    }  
 //////////////////////////	    
-//	    double x_change = (double) x / this.previousX;
-//	    double y_change = (double) y / this.previousY;
-//	    
-//	    System.out.println("The X has changed by: " + x_change);
-//	    System.out.println("The Y has changed by: " + y_change);
-//	    
-//	    if (x_change == 1 && y_change != 1)
-//	    {
-//	    	System.out.println("Y has changed");
-//	    	compDim.width = (int) (x * y_change);
-//	    	//compDim.height = (int) y;
-//	    	
-//	    	//compDim.setSize(x * y_change, y);
-//	    }else if (x_change != 1 && y_change == 1)
-//	    {
-//	    	System.out.println("X has changed");
-//	    	//compDim.width = (int) x;
-//	    	compDim.height = (int) (y * x_change);
-//	
-//	    	//compDim.setSize(x , y * x_change);
-//	    }else if (x_change != 1 && y_change != 1)
-//	    {
-//	    	System.out.println("Both X and Y have changed");
-//	    	compDim.width = (int) (x * y_change);
-//	    	compDim.height = (int) (y * x_change);
-//	    	//compDim.setSize(x * y_change, y * x_change);
-//	    }else // (x_change == 1 && y_change == 1)
-//	    {
-//	    	System.out.println("No change at all");
-//	    }	
+	    int x_change = x - this.previousX;
+	    int y_change = y - this.previousY;
+	    
+	    System.out.println("The X has changed by: " + x_change);
+	    System.out.println("The Y has changed by: " + y_change);
+	    
+	    if (x_change == 0 && y_change != 0)
+	    {
+	    	System.out.println("Y has changed");
+	    	compDim.width = (int) (y*RATIO);
+	    	//compDim.height = (int) y;
+	    	
+	    	//compDim.setSize(x * y_change, y);
+	    }else if (x_change != 0 && y_change == 0)
+	    {
+	    	System.out.println("X has changed");
+	    	//compDim.width = (int) x;
+	    	compDim.height = (int) (x/RATIO);
+	
+	    	//compDim.setSize(x , y * x_change);
+	    }else if (x_change != 0 && y_change != 0)
+	    {
+	    	System.out.println("Both X and Y have changed");
+	    	compDim.height = (int) (x/RATIO);
+	    	//compDim.setSize(x * y_change, y * x_change);
+	    }else // (x_change == 1 && y_change == 1)
+	    {
+	    	System.out.println("No change at all");
+	    }	
 //////////////////////// 
-//		window.setSize(compDim);
-//	    System.out.println(compDim);
+		window.setSize(compDim);
+	    System.out.println(compDim);
 	    //System.out.println("The new ratio is" + compDim.getWidth() / compDim.getHeight());
 	    
 	    //save the current width and height for the next call of this method
-//	    this.previousX = x;
-//	    this.previousY = y;
+	    this.previousX = x;
+	    this.previousY = y;
 	}
 
 	@Override
