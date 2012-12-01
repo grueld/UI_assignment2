@@ -1,8 +1,14 @@
 import java.awt.Component;
 import java.awt.Container;
 import java.awt.Dimension;
+import java.awt.Image;
 import java.awt.LayoutManager;
 import java.awt.LayoutManager2;
+
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+
+import sun.awt.windows.WWindowPeer;
 
 public class LayoutMan implements LayoutManager{
 
@@ -27,7 +33,13 @@ public class LayoutMan implements LayoutManager{
 
 			c[3].setBounds(margin, c[0].getY() + c[0].getHeight() + 5, wX - 2*margin - 35, wY/11) ;   // text
 			c[4].setBounds(wX - (margin + 20), c[3].getY(), 30, c[3].getHeight()) ;     // button3
-
+			
+			ImageIcon icon = new ImageIcon("icon/search.png");
+			Image ni = icon.getImage().getScaledInstance(c[4].getWidth(),c[4].getHeight(),java.awt.Image.SCALE_SMOOTH);
+			((JButton)c[4]).setIcon(new ImageIcon(ni));
+			
+			
+			
 			c[5].setBounds(margin + (int)(wX/3.69), c[3].getY() + c[3].getHeight() + 20 , (int)(wX/2.4), (int)(wY/3.86)) ;   // list
 
 			int l = (wX - 2*margin - 3*20)/4 ;
