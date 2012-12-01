@@ -95,22 +95,22 @@ public class Window extends JFrame implements ActionListener, ComponentListener 
 
 	public void componentResized(ComponentEvent e) {
 ////////////////////
-//		System.out.println("on passe dans componentresized " + RATIO) ;
-//		//Get the size of the window
-//		Container window = e.getComponent().getParent().getParent().getParent();
-//		//System.out.println(window.getClass());
-//		Dimension compDim = window.getSize();
-//		int x = compDim.width;  
-//	    int y = compDim.height;
-//	
-//	    //set new width and height to keep the same ratio
-//	    if (x / y < RATIO) {  
-//	      compDim.width = (int) (y * RATIO);  
-//	      compDim.height = (int) y;  
-//	    } else {  
-//	    	compDim.width = (int) x;  
-//	    	compDim.height = (int) (x / RATIO);  
-//	    }  
+		System.out.println("on passe dans componentresized " + RATIO) ;
+		//Get the size of the window
+		Container window = e.getComponent().getParent().getParent().getParent();
+		//System.out.println(window.getClass());
+		Dimension compDim = window.getSize();
+		int x = compDim.width;  
+	    int y = compDim.height;
+	
+	    //set new width and height to keep the same ratio
+	    if (x / y < RATIO) {  
+	      compDim.width = (int) (y * RATIO);  
+	      compDim.height = (int) y;  
+	    } else {  
+	    	compDim.width = (int) x;  
+	    	compDim.height = (int) (x / RATIO);  
+	    }  
 //////////////////////////	    
 //	    double x_change = (double) x / this.previousX;
 //	    double y_change = (double) y / this.previousY;
@@ -143,8 +143,8 @@ public class Window extends JFrame implements ActionListener, ComponentListener 
 //	    	System.out.println("No change at all");
 //	    }	
 //////////////////////// 
-//		window.setSize(compDim);
-//	    System.out.println(compDim);
+		window.setSize(compDim);
+	    System.out.println(compDim);
 	    //System.out.println("The new ratio is" + compDim.getWidth() / compDim.getHeight());
 	    
 	    //save the current width and height for the next call of this method
