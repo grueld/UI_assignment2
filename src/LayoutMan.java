@@ -31,12 +31,7 @@ public class LayoutMan implements LayoutManager{
 			c[3].setBounds(margin, c[0].getY() + c[0].getHeight() + 5, wX - 2*margin - 35, wY/11) ;   // text
 			c[4].setBounds(wX - (margin + 20), c[3].getY(), 30, c[3].getHeight()) ;     // button3
 			
-			ImageIcon icon = new ImageIcon("icon/search.png");
-			Image ni = icon.getImage().getScaledInstance(c[4].getWidth(),c[4].getHeight(),java.awt.Image.SCALE_SMOOTH);
-			((JButton)c[4]).setIcon(new ImageIcon(ni));
-			
-			
-			
+		
 			c[5].setBounds(margin + (int)(wX/3.69), c[3].getY() + c[3].getHeight() + 20 , (int)(wX/2.4), (int)(wY/3.86)) ;   // list
 
 			int l = (wX - 2*margin - 3*20)/4 ;
@@ -47,6 +42,11 @@ public class LayoutMan implements LayoutManager{
 			c[9].setBounds(margin + 3*l + 60, y, l, (int)(wY/5.4)) ;   // button7
 			c[10].setBounds(margin, c[6].getY() + c[6].getHeight() + 10, wX - 2*margin, wY/11) ;  // label2
 
+			ImageIcon icon = new ImageIcon("icon/search.png");
+			Image ni = icon.getImage().getScaledInstance(c[4].getWidth()/2,c[4].getHeight()/2,java.awt.Image.SCALE_SMOOTH);
+			((JButton)c[4]).setIcon(new ImageIcon(ni));
+			
+						
 //			System.out.println("wX: " + wX);
 //			System.out.println("wY: " + wY);		
 
