@@ -139,7 +139,7 @@ public class Window extends JFrame implements ActionListener, ComponentListener 
 		button2 = new JButton("Rotation");
 		button2.addActionListener(this) ;
 		text = new JTextField("Search a contact...");
-		button3 = new JButton("BUTTON3");
+		button3 = new JButton("");
 		String[] listContents = { "Item1", "Item2" };
 		list = new JList(listContents);
 		button4 = new JButton("BUTTON4");
