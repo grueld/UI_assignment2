@@ -4,7 +4,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ComponentEvent;
 import java.awt.event.ComponentListener;
+import java.io.File;
 
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -62,7 +65,10 @@ public class Window extends JFrame implements ActionListener, ComponentListener 
 		button6 = new JButton("BUTTON6");
 		button7 = new JButton("BUTTON7");
 		label2 = new JLabel("LABEL2");
-
+		
+		Icon icon = new ImageIcon("icon/search.png");
+		button3.setIcon(icon);
+		
 		contentPane.add(label1);
 		contentPane.add(button1);
 		contentPane.add(button2);
