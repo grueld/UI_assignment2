@@ -2,20 +2,19 @@ import java.awt.Component;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.LayoutManager;
-import java.awt.LayoutManager2;
 
 public class LayoutMan implements LayoutManager{
 
 	@Override
 	public void layoutContainer(Container parent) {
-		System.out.println("on rentre dans layoutContainer");
+//		System.out.println("on rentre dans layoutContainer");
 		Window w = (Window) parent.getParent().getParent().getParent() ;
 		int wX = w.getWidth() ;
 		int wY = w.getHeight() ;
 		float ratio = wX/(float)wY ;
 
-		System.out.println("le ratio dans layoutman: " + ratio) ;
-		System.out.println("win layoutMan l h: " + wX + " " + wY) ;
+//		System.out.println("le ratio dans layoutman: " + ratio) ;
+//		System.out.println("win layoutMan l h: " + wX + " " + wY) ;
 		
 //		if (ratio == 16/(float)9) {
 			int margin = 10 ;
@@ -55,7 +54,8 @@ public class LayoutMan implements LayoutManager{
 //		else if (ratio == 9/(float)16) {
 //			System.out.println("format 9/16 bien reconnu") ;
 //		}
-			System.out.println("on sort de layoutContainer") ;
+//			System.out.println("on sort de layoutContainer") ;
+//			System.out.println("") ;
 	}
 
 	@Override
