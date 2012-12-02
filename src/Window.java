@@ -41,6 +41,7 @@ public class Window extends JFrame implements ActionListener, ComponentListener 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
 		setLocation (100,100) ;
 		setSize(480, 270);
+		setMinimumSize(new Dimension(480, 270)) ;
 		setResizable(true) ;
 		setVisible(true) ;
 
@@ -55,13 +56,22 @@ public class Window extends JFrame implements ActionListener, ComponentListener 
 
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
-
+		Dimension a = new Dimension(270, 480) ;
+		Dimension b = new Dimension(480, 270) ;
+		Dimension c ;
+		
 		if (arg0.getSource() == button1) {
 			jop.showMessageDialog(getComponent(0), "HOLE");
 		}
 		if (arg0.getSource() == button2) {
 			RATIO = 1/RATIO;
 			setSize(getHeight(), getWidth()) ;
+			setMinimumSize(a) ;
+			
+			// switch a and b
+			c = b ;
+			b = a ;
+			a = c ;
 		}
 
 	}

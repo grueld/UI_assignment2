@@ -46,14 +46,10 @@ public class LayoutMan implements LayoutManager{
 			ImageIcon icon = new ImageIcon("icon/search.png");
 			Image ni = icon.getImage().getScaledInstance(c[4].getWidth()/2,c[4].getHeight()/2,java.awt.Image.SCALE_SMOOTH);
 			((JButton)c[4]).setIcon(new ImageIcon(ni));
-			
-						
-//			System.out.println("wX: " + wX);
-//			System.out.println("wY: " + wY);		
-
 		}
 		else if (9/(float)16 - 0.005 < ratio && ratio < 9/(float)16 +0.005) {
 			System.out.println("format 9/16 bien reconnu") ;
+			
 		}
 			System.out.println("on sort de layoutContainer") ;
 			System.out.println("") ;
