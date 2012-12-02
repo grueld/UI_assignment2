@@ -94,7 +94,7 @@ public class Window extends JFrame implements ActionListener, ComponentListener 
 	    
 	    if (x_change == 0 && y_change != 0) {
 	    	compDim.width = (int) (y*RATIO);
-	    	//compDim.height = y;
+	    	compDim.height = y;
 	    }
 	    else if (x_change != 0 && y_change == 0) {
 	    	compDim.width = x;
@@ -115,8 +115,9 @@ public class Window extends JFrame implements ActionListener, ComponentListener 
 	    //save the current width and height for the next call of this method
 	    this.previousX = compDim.width ;
 	    this.previousY = compDim.height ;
-	    System.out.println("nouveaux x y: " + x + " " + y) ;
-	    System.out.println("ratio: " + RATIO) ;
+	    System.out.println("nouveaux x y: " + compDim.width + " " + compDim.height) ;
+	    System.out.println("used ratio: " + RATIO) ;
+	    System.out.println("computed ratio: " + compDim.width/(double)compDim.height ) ;
 		System.out.println("on sort de componentResized") ;
 	    System.out.println("") ;
 	}
@@ -138,7 +139,7 @@ public class Window extends JFrame implements ActionListener, ComponentListener 
 		button2 = new JButton("Rotation");
 		button2.addActionListener(this) ;
 		text = new JTextField("Search a contact...");
-		button3 = new JButton("BUTTON3");
+		button3 = new JButton("");
 		String[] listContents = { "Item1", "Item2" };
 		list = new JList(listContents);
 		button4 = new JButton("BUTTON4");
