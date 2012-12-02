@@ -8,8 +8,6 @@ import java.awt.LayoutManager2;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
-import sun.awt.windows.WWindowPeer;
-
 public class LayoutMan implements LayoutManager{
 
 	@Override
