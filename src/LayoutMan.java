@@ -11,16 +11,17 @@ public class LayoutMan implements LayoutManager{
 
 	@Override
 	public void layoutContainer(Container parent) {
-//		System.out.println("on rentre dans layoutContainer");
+		System.out.println("on rentre dans layoutContainer");
 		Window w = (Window) parent.getParent().getParent().getParent() ;
 		int wX = w.getWidth() ;
 		int wY = w.getHeight() ;
 		float ratio = wX/(float)wY ;
 
-//		System.out.println("le ratio dans layoutman: " + ratio) ;
-//		System.out.println("win layoutMan l h: " + wX + " " + wY) ;
+		System.out.println("le ratio dans layoutman: " + ratio) ;
+		System.out.println("win layoutMan l h: " + wX + " " + wY) ;
 		
-//		if (ratio == 16/(float)9) {
+		if (16/(float)9 - 0.005 < ratio && ratio < 16/(float)9 + 0.005) {
+			System.out.println("cool") ;
 			int margin = 10 ;
 			Component[] c = parent.getComponents();
 
@@ -50,22 +51,12 @@ public class LayoutMan implements LayoutManager{
 //			System.out.println("wX: " + wX);
 //			System.out.println("wY: " + wY);		
 
-			//		Dimension d;
-			//		int height = 1;
-			//		int width = 1;
-			//		for(Component c: components)
-			//		{
-			//			d = c.getPreferredSize();
-			//			height += 25;
-			//			width += 25;
-			//			c.setBounds(height, width, d.width, d.height);
-			//		}
-//		}
-//		else if (ratio == 9/(float)16) {
-//			System.out.println("format 9/16 bien reconnu") ;
-//		}
-//			System.out.println("on sort de layoutContainer") ;
-//			System.out.println("") ;
+		}
+		else if (9/(float)16 - 0.005 < ratio && ratio < 9/(float)16 +0.005) {
+			System.out.println("format 9/16 bien reconnu") ;
+		}
+			System.out.println("on sort de layoutContainer") ;
+			System.out.println("") ;
 	}
 
 	@Override
