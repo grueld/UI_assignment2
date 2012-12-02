@@ -20,7 +20,7 @@ public class LayoutMan implements LayoutManager{
 //		System.out.println("le ratio dans layoutman: " + ratio) ;
 //		System.out.println("win layoutMan l h: " + wX + " " + wY) ;
 		
-//		if (ratio == 16/(float)9) {
+		if (ratio == 16/(float)9) {
 			int margin = 10 ;
 			Component[] c = parent.getComponents();
 
@@ -60,10 +60,11 @@ public class LayoutMan implements LayoutManager{
 			//			width += 25;
 			//			c.setBounds(height, width, d.width, d.height);
 			//		}
-//		}
-//		else if (ratio == 9/(float)16) {
-//			System.out.println("format 9/16 bien reconnu") ;
-//		}
+		}
+		else if (ratio == 9/(float)16) {
+			System.out.println("format 9/16 bien reconnu") ;
+			
+		}
 //			System.out.println("on sort de layoutContainer") ;
 //			System.out.println("") ;
 	}
