@@ -116,12 +116,14 @@ public class Window extends JFrame implements ActionListener, ComponentListener 
 	public void componentShown(ComponentEvent arg0) {}
 	
 	public void initComponents() {
-		button1 = new JButton("Ass");
+		button1 = new JButton("");
 		button1.addActionListener(this);
+		button1.setBackground(Color.white);
 
-		label1 = new JLabel("LABEL1");
-		button2 = new JButton("Rotation");
+		label1 = new JLabel("#UI");
+		button2 = new JButton();
 		button2.addActionListener(this) ;
+		button2.setBackground(Color.LIGHT_GRAY);
 		text = new JTextField("Search a contact...");
 		text.setForeground(Color.lightGray);
 		button3 = new JButton();
@@ -131,8 +133,10 @@ public class Window extends JFrame implements ActionListener, ComponentListener 
 		button4.setBackground(Color.white);
 		button5 = new JButton();
 		button5.setBackground(Color.white);
-		button6 = new JButton("BUTTON6");
-		button7 = new JButton("BUTTON7");
+		button6 = new JButton("");
+		button6.setBackground(Color.white);
+		button7 = new JButton("");
+		button7.setBackground(Color.white);
 		label2 = new JLabel("LABEL2");
 
 		contentPane.add(label1);
