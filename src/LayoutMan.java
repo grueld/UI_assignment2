@@ -20,6 +20,7 @@ public class LayoutMan implements LayoutManager{
 		System.out.println("le ratio dans layoutman: " + ratio) ;
 		System.out.println("win layoutMan l h: " + wX + " " + wY) ;
 		
+
 		if (16/(float)9 - 0.005 < ratio && ratio < 16/(float)9 + 0.005) {
 			System.out.println("cool") ;
 			int margin = 10 ;
