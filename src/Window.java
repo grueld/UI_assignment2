@@ -1,3 +1,4 @@
+import java.awt.Color;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.Image;
@@ -125,11 +126,14 @@ public class Window extends JFrame implements ActionListener, ComponentListener 
 		button2 = new JButton("Rotation");
 		button2.addActionListener(this) ;
 		text = new JTextField("Search a contact...");
-		button3 = new JButton("");
-		String[] listContents = { "Item1", "Item2" };
+		text.setForeground(Color.lightGray);
+		button3 = new JButton();
+		String[] listContents = { "Serge Nahas", "Damien Gruel","Cyrielle Recoura", "Marion Grosjean" };
 		list = new JList(listContents);
-		button4 = new JButton("BUTTON4");
-		button5 = new JButton("BUTTON5");
+		button4 = new JButton();
+		button4.setBackground(Color.white);
+		button5 = new JButton();
+		button5.setBackground(Color.white);
 		button6 = new JButton("BUTTON6");
 		button7 = new JButton("BUTTON7");
 		label2 = new JLabel("LABEL2");

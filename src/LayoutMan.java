@@ -20,6 +20,7 @@ public class LayoutMan implements LayoutManager{
 		System.out.println("le ratio dans layoutman: " + ratio) ;
 		System.out.println("win layoutMan l h: " + wX + " " + wY) ;
 		
+
 		if (16/(float)9 - 0.005 < ratio && ratio < 16/(float)9 + 0.005) {
 			System.out.println("cool") ;
 			int margin = 10 ;
@@ -43,9 +44,18 @@ public class LayoutMan implements LayoutManager{
 			c[9].setBounds(margin + 3*l + 60, y, l, (int)(wY/5.4)) ;   // button7
 			c[10].setBounds(margin, c[6].getY() + c[6].getHeight() + 10, wX - 2*margin, wY/11) ;  // label2
 
-			ImageIcon icon = new ImageIcon("icon/search.png");
-			Image ni = icon.getImage().getScaledInstance(c[4].getWidth()/2,c[4].getHeight()/2,java.awt.Image.SCALE_SMOOTH);
-			((JButton)c[4]).setIcon(new ImageIcon(ni));
+			ImageIcon search = new ImageIcon("icon/search.png");
+			Image isearch = search.getImage().getScaledInstance(c[4].getWidth()/2,c[4].getHeight()/2,java.awt.Image.SCALE_SMOOTH);
+			((JButton)c[4]).setIcon(new ImageIcon(isearch));
+			
+			ImageIcon contact = new ImageIcon("icon/contact.jpg");
+			Image icontact = contact.getImage().getScaledInstance(c[6].getWidth()/2,c[6].getHeight(),java.awt.Image.SCALE_SMOOTH);
+			((JButton)c[6]).setIcon(new ImageIcon(icontact));
+			
+			ImageIcon horloge = new ImageIcon("icon/horloge.png");
+			Image ihorloge = horloge.getImage().getScaledInstance(c[7].getWidth()/2,c[7].getHeight(),java.awt.Image.SCALE_SMOOTH);
+			((JButton)c[7]).setIcon(new ImageIcon(ihorloge));
+						
 		}
 		else if (9/(float)16 - 0.005 < ratio && ratio < 9/(float)16 +0.005) {
 			System.out.println("format 9/16 bien reconnu") ;
