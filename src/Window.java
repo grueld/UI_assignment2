@@ -1,21 +1,18 @@
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.Dimension;
-import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ComponentEvent;
 import java.awt.event.ComponentListener;
-import java.io.File;
 
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 
 public class Window extends JFrame implements ActionListener, ComponentListener {
@@ -128,7 +125,7 @@ public class Window extends JFrame implements ActionListener, ComponentListener 
 		text = new JTextField("Search a contact...");
 		text.setForeground(Color.lightGray);
 		button3 = new JButton();
-		String[] listContents = { "Serge Nahas", "Damien Gruel","Cyrielle Recoura", "Marion Grosjean" };
+		String[] listContents = { "Serge Nahas", "Damien Gruel","Cyrielle Recoura", "Marion Grosjean", "Lafayette rouflaquettesssssssssssssssssss" };
 		list = new JList(listContents);
 		button4 = new JButton();
 		button4.setBackground(Color.white);
@@ -143,7 +140,8 @@ public class Window extends JFrame implements ActionListener, ComponentListener 
 		contentPane.add(button2);
 		contentPane.add(text);
 		contentPane.add(button3);
-		contentPane.add(list);
+		 
+		contentPane.add(new JScrollPane(list));
 		contentPane.add(button4);
 		contentPane.add(button5);
 		contentPane.add(button6);
