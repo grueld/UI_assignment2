@@ -91,12 +91,8 @@ public class LayoutMan implements LayoutManager{
 			c[4].setBounds(wX - (margin + 40), c[3].getY(), 30, c[3].getHeight()) ;     // button3
 		
 			c[5].setBounds(margin, c[3].getY() + c[3].getHeight() + 20 , (int)(wX/3.4), (int)(wY/2.5)) ;   // list
-
-			int l = (wX - 2*margin - 3*20)/4 ;
-			int y = c[5].getY() + c[5].getHeight() + 20 ;
 			
 			int margin2 = 10;
-			
 			int bh = (int) ((c[5].getHeight() - 3 * margin2)/ 4);
 			int bw = (int) (wX - (c[5].getWidth() + margin + 2 * margin2)); 
 			
@@ -111,9 +107,9 @@ public class LayoutMan implements LayoutManager{
 			
 			c[10].setBounds(margin, c[9].getY() + c[9].getHeight() + margin2, wX - 2*margin, wY/11) ;  // label2
 
-//			ImageIcon icon = new ImageIcon("icon/search.png");
-//			Image ni = icon.getImage().getScaledInstance(c[4].getWidth()/2,c[4].getHeight()/2,java.awt.Image.SCALE_SMOOTH);
-//			((JButton)c[4]).setIcon(new ImageIcon(ni));
+			ImageIcon icon = new ImageIcon("icon/search.png");
+			Image ni = icon.getImage().getScaledInstance(c[4].getWidth()/2,c[4].getHeight()/2,java.awt.Image.SCALE_SMOOTH);
+			((JButton)c[4]).setIcon(new ImageIcon(ni));
 
 		}
 			System.out.println("on sort de layoutContainer") ;
