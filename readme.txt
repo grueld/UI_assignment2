@@ -51,7 +51,7 @@ Discussed ways to design and code the layout manager.
 November 30, 2012; 4:30 - 10:00;
 Designed and coded main classes for the layout manager.
 
-December 02, 2012; 4:30 - ??:??;
+December 02, 2012; 4:30 - 11:30;
 Improved the layout manager design and fixed last remaining bugs.
 Finished readme.txt
 
