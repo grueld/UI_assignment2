@@ -12,18 +12,13 @@ public class LayoutMan implements LayoutManager{
 
 	@Override
 	public void layoutContainer(Container parent) {
-		System.out.println("on rentre dans layoutContainer");
 		Window w = (Window) parent.getParent().getParent().getParent() ;
 		int wX = w.getWidth() ;
 		int wY = w.getHeight() - 30 ;
 		float ratio = wX/(float)wY ;
 
-		System.out.println("le ratio dans layoutman: " + ratio) ;
-		System.out.println("win layoutMan l h: " + wX + " " + wY) ;
-		
 
 		if (16/(float)9 - 0.005 < ratio && ratio < 16/(float)9 + 0.005) {
-			System.out.println("cool") ;
 			int margin = 10 ;
 			Component[] c = parent.getComponents();
 
@@ -79,7 +74,6 @@ public class LayoutMan implements LayoutManager{
 						
 		}
 		else if (9/(float)16 - 0.005 < ratio && ratio < 9/(float)16 +0.005) {
-			System.out.println("format 9/16 bien reconnu") ;
 			int margin = 5 ;
 			Component[] c = parent.getComponents();
 
@@ -108,12 +102,7 @@ public class LayoutMan implements LayoutManager{
 			
 			
 			c[10].setBounds(margin, c[9].getY() + c[9].getHeight() + margin, wX - 2*margin, wY/11) ;  // label2
-
-
-			System.out.println("c5: " + c[5].getY()) ;
 		}
-			System.out.println("on sort de layoutContainer") ;
-			System.out.println("") ;
 	}
 
 	@Override
