@@ -88,8 +88,8 @@ public class Window extends JFrame implements ActionListener, ComponentListener 
 	    	compDim.height = (int) (x/RATIO) + 30;
 	    }
 	    else if (x_change != 0 && y_change != 0) {
-	    	compDim.width = x ;
-	    	compDim.height = (int) (x/RATIO) + 30;
+	    	compDim.width = (int) (y*RATIO) ;
+	    	compDim.height = y + 30 ;
 	    }
 	    else {
 	    	//No change
