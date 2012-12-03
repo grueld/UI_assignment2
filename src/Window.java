@@ -30,6 +30,8 @@ public class Window extends JFrame implements ActionListener, ComponentListener 
 	private JButton button5, button6, button7 ;
 
 	private Dimension winDim = new Dimension(480, 270+30) ;
+	Dimension a = new Dimension(winDim.height-30, winDim.width+30) ;
+	Dimension b = winDim ;
 	private int previousX = winDim.width ;
 	private int previousY = winDim.height - 30;
 
@@ -54,8 +56,6 @@ public class Window extends JFrame implements ActionListener, ComponentListener 
 
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
-		Dimension a = new Dimension(winDim.height-30, winDim.width+30) ;
-		Dimension b = winDim ;
 		Dimension c ;
 		
 		if (arg0.getSource() == button2) {

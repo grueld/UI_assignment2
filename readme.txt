@@ -22,12 +22,7 @@ The elements in the window are:
 - seven buttons (which can be seen as "small" widgets).
 - one text field
 - one list of items (which can be seen as "tall" widget, and which enables the
-	scrolling).
-
-	TODO: describe your design rationale for the fact that with a change of
-	aspect ratio the layout manager may "run out of space"
-	
-	 
+	scrolling). 
 --------------------
 Additional Features: (optional)
 --------------------
@@ -65,10 +60,10 @@ Responsibilities:
 -----------------
 
 Serge:
-GUI layout and programming, add/remove feature programming
+Layout in portrait mode and window resizing
 
 Damien:
-GUI layout and programming, add/remove feature programming
+Layout in landscape mode and window resizing 
 
 Ludovic:
-Conversion to greyscale programming, add/remove feature programming
+Layout in landscape mode, addition of icons for the components, documentation
