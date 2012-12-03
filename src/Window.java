@@ -29,17 +29,17 @@ public class Window extends JFrame implements ActionListener, ComponentListener 
 	private JButton button1, button2, button3, button4 ;
 	private JButton button5, button6, button7 ;
 
-	private JOptionPane jop = new JOptionPane();
-	private int previousX = 480 ;
-	private int previousY = 270+30 ;
+	private Dimension winDim = new Dimension(480, 270+30) ;
+	private int previousX = winDim.width ;
+	private int previousY = winDim.height - 30;
 
 	public Window() {
 		// window settings
 		setTitle("UI assignemnt 2") ;
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
 		setLocation (100,100) ;
-		setSize(480, 270+30);
-		setMinimumSize(new Dimension(480, 270+30)) ;
+		setSize(winDim);
+		setMinimumSize(winDim) ;
 		setResizable(true) ;
 		setVisible(true) ;
 
@@ -54,8 +54,8 @@ public class Window extends JFrame implements ActionListener, ComponentListener 
 
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
-		Dimension a = new Dimension(270, 480+30) ;
-		Dimension b = new Dimension(480, 270+30) ;
+		Dimension a = new Dimension(winDim.height-30, winDim.width+30) ;
+		Dimension b = winDim ;
 		Dimension c ;
 		
 		if (arg0.getSource() == button2) {
@@ -75,21 +75,21 @@ public class Window extends JFrame implements ActionListener, ComponentListener 
 		Container window = e.getComponent().getParent().getParent().getParent();
 		Dimension compDim = window.getSize();
 		int x = compDim.width;  
-	    int y = compDim.height;
+	    int y = compDim.height-30;
 	    int x_change = x - this.previousX;
 	    int y_change = y - this.previousY;
 	    
 	    if (x_change == 0 && y_change != 0) {
 	    	compDim.width = (int) (y*RATIO);
-	    	compDim.height = y;
+	    	compDim.height = y + 30;
 	    }
 	    else if (x_change != 0 && y_change == 0) {
 	    	compDim.width = x;
-	    	compDim.height = (int) (x/RATIO);
+	    	compDim.height = (int) (x/RATIO) + 30;
 	    }
 	    else if (x_change != 0 && y_change != 0) {
 	    	compDim.width = x ;
-	    	compDim.height = (int) (x/RATIO);
+	    	compDim.height = (int) (x/RATIO) + 30;
 	    }
 	    else {
 	    	//No change
@@ -99,7 +99,7 @@ public class Window extends JFrame implements ActionListener, ComponentListener 
 	    
 	    //save the current width and height for the next call of this method
 	    this.previousX = compDim.width ;
-	    this.previousY = compDim.height ;
+	    this.previousY = compDim.height - 30 ;
 	    
 	}
 	

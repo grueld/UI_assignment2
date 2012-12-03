@@ -15,8 +15,8 @@ public class LayoutMan implements LayoutManager{
 		System.out.println("on rentre dans layoutContainer");
 		Window w = (Window) parent.getParent().getParent().getParent() ;
 		int wX = w.getWidth() ;
-		int wY = w.getHeight() ;
-		float ratio = wX/(float)(wY-30) ;
+		int wY = w.getHeight() - 30 ;
+		float ratio = wX/(float)wY ;
 
 		System.out.println("le ratio dans layoutman: " + ratio) ;
 		System.out.println("win layoutMan l h: " + wX + " " + wY) ;
