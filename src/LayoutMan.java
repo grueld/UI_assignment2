@@ -122,7 +122,7 @@ public class LayoutMan implements LayoutManager{
 			c[9].setBounds(c[6].getX()				, c[8].getY() + c[8].getHeight() + margin2			, bw, bh) ;   // button7
 			
 			
-			//c[10].setBounds(margin, c[6].getY() + c[6].getHeight() + margin, wX - 2*margin, wY/11) ;  // label2
+			c[10].setBounds(margin, c[9].getY() + c[9].getHeight() + margin2, wX - 2*margin, wY/11) ;  // label2
 
 //			ImageIcon icon = new ImageIcon("icon/search.png");
 //			Image ni = icon.getImage().getScaledInstance(c[4].getWidth()/2,c[4].getHeight()/2,java.awt.Image.SCALE_SMOOTH);
