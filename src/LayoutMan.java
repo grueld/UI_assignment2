@@ -12,18 +12,13 @@ public class LayoutMan implements LayoutManager{
 
 	@Override
 	public void layoutContainer(Container parent) {
-		System.out.println("on rentre dans layoutContainer");
 		Window w = (Window) parent.getParent().getParent().getParent() ;
 		int wX = w.getWidth() ;
 		int wY = w.getHeight() - 30 ;
 		float ratio = wX/(float)wY ;
 
-		System.out.println("le ratio dans layoutman: " + ratio) ;
-		System.out.println("win layoutMan l h: " + wX + " " + wY) ;
-		
 
 		if (16/(float)9 - 0.005 < ratio && ratio < 16/(float)9 + 0.005) {
-			System.out.println("cool") ;
 			int margin = 10 ;
 			Component[] c = parent.getComponents();
 
@@ -79,22 +74,23 @@ public class LayoutMan implements LayoutManager{
 						
 		}
 		else if (9/(float)16 - 0.005 < ratio && ratio < 9/(float)16 +0.005) {
-			System.out.println("format 9/16 bien reconnu") ;
 			int margin = 5 ;
 			Component[] c = parent.getComponents();
 
-			c[0].setBounds(margin, margin, wX/6, wY/11) ;  // label1
-			c[1].setBounds(wX - (margin + 30 + 2*wX/3), margin, wX/3, wY/11) ;         // button1
-			c[2].setBounds(wX - (margin + wX/3), margin, wX/3, wY/11) ;              // button2
+			c[0].setBounds(margin, margin, wX/2, wY/11) ;  // label1
+			c[1].setBounds(wX - (3*margin + 10 + 2*wX/9), margin, wX/9, wY/11) ;         // button1
+			c[2].setBounds(wX - (3*margin + wX/9), margin, wX/9, wY/11) ;                // button2
 
-			c[3].setBounds(margin, c[0].getY() + c[0].getHeight() + 5, wX - 8*margin - 35, wY/11) ;   // text
+			c[3].setBounds(margin, c[0].getY() + c[0].getHeight() + 5, wX - 6*margin - 30, wY/11) ;   // text
 			c[4].setBounds(wX - (margin + 40), c[3].getY(), 30, c[3].getHeight()) ;     // button3
 		
-			c[5].setBounds(margin, c[3].getY() + c[3].getHeight() + 20 , (int)(wX/3.4), (int)(wY/2.5)) ;   // list
-			
 			int margin2 = 10;
+			int y5 = c[3].getY() + c[3].getHeight() + 20 ;
+			
+			c[5].setBounds(margin, y5 , wX/2, wY - (y5 + wY/11 + margin2)) ;   // list
+						
 			int bh = (int) ((c[5].getHeight() - 3 * margin2)/ 4);
-			int bw = (int) (wX - (c[5].getWidth() + margin + 2 * margin2)); 
+			int bw = (int) (wX - (c[5].getWidth() + 5 * margin)); 
 			
 			c[6].setBounds(c[5].getWidth()+ 2 * margin, c[3].getY() + c[3].getHeight() + 20		, bw, bh ) ;     // button4
 			
@@ -104,11 +100,8 @@ public class LayoutMan implements LayoutManager{
 			
 			c[9].setBounds(c[6].getX()				, c[8].getY() + c[8].getHeight() + margin2			, bw, bh) ;   // button7
 			
-			c[10].setBounds(margin, c[9].getY() + c[9].getHeight() + margin2, wX - 2*margin, wY/11) ;  // label2
-
+			c[10].setBounds(margin, c[9].getY() + c[9].getHeight() + margin, wX - 2*margin, wY/11) ;  // label2
 		}
-			System.out.println("on sort de layoutContainer") ;
-			System.out.println("") ;
 	}
 
 	@Override
