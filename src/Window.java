@@ -135,7 +135,6 @@ public class Window extends JFrame implements ActionListener, ComponentListener 
 		button7 = new JButton("");
 		button7.setBackground(Color.white);
 		label2 = new JLabel("Love the free and open Internet? Tell the world's governments to keep it that way.");
-
 		contentPane.add(label1);
 		contentPane.add(button1);
 		contentPane.add(button2);
