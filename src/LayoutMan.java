@@ -97,19 +97,6 @@ public class LayoutMan implements LayoutManager{
 			
 			int margin2 = 10;
 			
-			// For square buttons
-//			int bh = (int) ((c[5].getHeight() - margin2)/ 2);
-//			int bw = (int) (wX - (c[5].getWidth() + margin + 3 * margin2)) / 2; 
-//			
-//			c[6].setBounds(c[5].getWidth()+ 2 * margin, c[3].getY() + c[3].getHeight() + 20		, bw, bh ) ;     // button4
-//			
-//			c[7].setBounds(c[6].getX() 				, c[6].getY() + c[6].getHeight() + margin2  , bw, bh) ;   // button5
-//			
-//			c[8].setBounds(c[6].getX() + c[6].getWidth() + margin2,c[3].getY() + c[3].getHeight() + 20 		, bw, bh ) ;     // button6
-//			
-//			c[9].setBounds(c[8].getX()				, c[6].getY() + c[6].getHeight() + margin2				, bw, bh) ;   // button7
-//			
-			
 			int bh = (int) ((c[5].getHeight() - 3 * margin2)/ 4);
 			int bw = (int) (wX - (c[5].getWidth() + margin + 2 * margin2)); 
 			
