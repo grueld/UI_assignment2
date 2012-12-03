@@ -31,15 +31,15 @@ public class Window extends JFrame implements ActionListener, ComponentListener 
 
 	private JOptionPane jop = new JOptionPane();
 	private int previousX = 480 ;
-	private int previousY = 270 ;
+	private int previousY = 270+30 ;
 
 	public Window() {
 		// window settings
 		setTitle("UI assignemnt 2") ;
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
 		setLocation (100,100) ;
-		setSize(480, 270);
-		setMinimumSize(new Dimension(480, 270)) ;
+		setSize(480, 270+30);
+		setMinimumSize(new Dimension(480, 270+30)) ;
 		setResizable(true) ;
 		setVisible(true) ;
 
@@ -54,16 +54,13 @@ public class Window extends JFrame implements ActionListener, ComponentListener 
 
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
-		Dimension a = new Dimension(270, 480) ;
-		Dimension b = new Dimension(480, 270) ;
+		Dimension a = new Dimension(270, 480+30) ;
+		Dimension b = new Dimension(480, 270+30) ;
 		Dimension c ;
 		
-		if (arg0.getSource() == button1) {
-			jop.showMessageDialog(getComponent(0), "HOLE");
-		}
 		if (arg0.getSource() == button2) {
 			RATIO = 1/RATIO;
-			setSize(getHeight(), getWidth()) ;
+			setSize(getHeight()-30, getWidth()+30) ;
 			setMinimumSize(a) ;
 			
 			// switch a and b
