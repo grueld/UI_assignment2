@@ -32,7 +32,7 @@ public class LayoutMan implements LayoutManager{
 			c[2].setBounds(wX - (margin + (int)(wX/9.6)), margin, (int)(wX/9.6), wY/11) ;                // button2
 
 			c[3].setBounds(margin, c[0].getY() + c[0].getHeight() + 5, wX - 2*margin - 35, wY/11) ;   // text
-			c[4].setBounds(wX - (margin + 20), c[3].getY(), 30, c[3].getHeight()) ;     // button3
+			c[4].setBounds(wX - (margin + 30), c[3].getY(), 30, c[3].getHeight()) ;     // button3
 			
 		
 			c[5].setBounds(margin + (int)(wX/9.6), c[3].getY() + c[3].getHeight() + 20 , (int)(wX/1.33), (int)(wY/3.17)) ;   // list
