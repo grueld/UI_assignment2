@@ -36,7 +36,7 @@ Several advanced layout features are supported by the program.
 For example, we have the text field and the button on its right (with the
 magnifier on it) that stay adjacent, whatever the size and the orientation.
 Moreover, the list of items is centered, whatever the size.
-And finaly, the first two buttons (the one with the "log out" icon and the one
+And finally, the first two buttons (the one with the "log out" icon and the one
 with the "rotation" icon) are right-aligned, whatever the size and the
 orientation.
 
