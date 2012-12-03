@@ -122,7 +122,7 @@ public class Window extends JFrame implements ActionListener, ComponentListener 
 		button5 = new JButton("BUTTON5");
 		button6 = new JButton("BUTTON6");
 		button7 = new JButton("BUTTON7");
-		label2 = new JLabel("LABEL2");
+		//label2 = new JLabel("LABEL2");
 
 		contentPane.add(label1);
 		contentPane.add(button1);
@@ -134,7 +134,7 @@ public class Window extends JFrame implements ActionListener, ComponentListener 
 		contentPane.add(button5);
 		contentPane.add(button6);
 		contentPane.add(button7);
-		contentPane.add(label2);
+		//contentPane.add(label2);
 	}
 
 }
