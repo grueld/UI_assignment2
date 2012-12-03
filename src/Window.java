@@ -124,7 +124,7 @@ public class Window extends JFrame implements ActionListener, ComponentListener 
 		text = new JTextField("Search a contact...");
 		text.setForeground(Color.lightGray);
 		button3 = new JButton();
-		String[] listContents = { "Serge Nahas", "Damien Gruel","Cyrielle Recoura", "Marion Grosjean", "Lafayette rouflaquettesssssssssssssssssss" };
+		String[] listContents = { "Serge Nahas", "Damien Gruel","Cyrielle Recoura", "Marion Grosjean", "Ludovic Lavalette" };
 		list = new JList(listContents);
 		button4 = new JButton();
 		button4.setBackground(Color.white);
